@@ -60,6 +60,10 @@
             gap: 40px;
         }
 
+        .nav-menu li {
+            position: relative;
+        }
+
         .nav-menu li a {
             text-decoration: none;
             color: #333;
@@ -67,6 +71,8 @@
             font-size: 1rem;
             transition: color 0.3s ease;
             position: relative;
+            display: block;
+            padding: 10px 0;
         }
 
         .nav-menu li a:hover {
@@ -80,11 +86,94 @@
         .nav-menu li a.active::after {
             content: '';
             position: absolute;
-            bottom: -5px;
+            bottom: 5px;
             left: 0;
             width: 100%;
             height: 2px;
             background: #003750;
+        }
+
+        /* Dropdown Styles */
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
+            min-width: 280px;
+            box-shadow: 0 15px 35px rgba(0, 55, 80, 0.12), 0 5px 15px rgba(0, 0, 0, 0.07);
+            border-radius: 12px;
+            border: 1px solid rgba(0, 55, 80, 0.08);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-15px) scale(0.95);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 1000;
+            padding: 8px 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-menu li:hover .dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0) scale(1);
+        }
+
+        .dropdown-item {
+            display: flex;
+            align-items: center;
+            padding: 14px 20px;
+            color: #4a5568;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border-left: 3px solid transparent;
+            position: relative;
+            margin: 2px 8px;
+            border-radius: 8px;
+        }
+
+        .dropdown-item::before {
+            content: '▶';
+            font-size: 0.7rem;
+            color: #5A9DB9;
+            margin-right: 12px;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateX(-5px);
+        }
+
+        .dropdown-item:hover {
+             background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%);
+             color: #003750;
+             border-left-color: #5A9DB9;
+             transform: translateX(5px);
+             box-shadow: 0 4px 12px rgba(90, 157, 185, 0.15);
+         }
+
+         .dropdown-item:hover::before {
+             opacity: 1;
+             transform: translateX(0);
+             color: #5A9DB9;
+         }
+
+        .dropdown-item:first-child {
+            margin-top: 6px;
+        }
+
+        .dropdown-item:last-child {
+            margin-bottom: 6px;
+        }
+
+        .dropdown-title {
+            font-weight: 600;
+            color: #003750;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 8px 20px 5px;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 5px;
         }
 
         /* Hero Section */
@@ -196,15 +285,19 @@
         .department-card {
             background: white;
             border-radius: 12px;
-            padding: 40px;
-            box-shadow: 0 10px 30px rgba(0, 55, 80, 0.1);
+            padding: 35px;
+            box-shadow: 0 8px 25px rgba(0, 55, 80, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             border: 1px solid #5A9DB9;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .department-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 55, 80, 0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 55, 80, 0.15);
         }
 
         .department-icon {
@@ -261,13 +354,20 @@
             border-radius: 6px;
             font-weight: 600;
             cursor: pointer;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
             width: 100%;
+            margin-top: auto;
+            font-size: 1rem;
+            box-shadow: 0 4px 15px rgba(0, 55, 80, 0.2);
         }
 
         .department-btn:hover {
             background: #5A9DB9;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 55, 80, 0.3);
         }
+
+
 
         /* Reports Section */
         .reports-section {
@@ -417,8 +517,20 @@
             <nav>
                 <ul class="nav-menu">
                     <li><a href="#home" class="active">Home</a></li>
-                    <li><a href="#departments">Departments</a></li>
-                    <li><a href="#projects">Projects</a></li>
+                    <li>
+                        <a href="#departments">Departments</a>
+                        <div class="dropdown">
+                            <a href="#departments" class="dropdown-item">Business Partnership (BP)</a>
+                            <a href="#departments" class="dropdown-item">Accounting</a>
+                            <a href="#departments" class="dropdown-item">Financial Planning</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#projects">Projects</a>
+                        <div class="dropdown">
+                            <a href="#projects" class="dropdown-item">Province Persona Project</a>
+                        </div>
+                    </li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -638,7 +750,7 @@
             // Update active navigation link on scroll
             window.addEventListener('scroll', function() {
                 const sections = document.querySelectorAll('section[id]');
-                const navLinks = document.querySelectorAll('.nav-menu a');
+                const navLinks = document.querySelectorAll('.nav-menu > li > a');
                 
                 let current = '';
                 sections.forEach(section => {
