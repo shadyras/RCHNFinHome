@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accounting Reports - RCHN Finance</title>
+    <link rel="stylesheet" href="styles/shared-components.css">
+    <link rel="stylesheet" href="styles/accounting-reports.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <img src="logo/RM ICON RGB.jpg" alt="Radiometer Logo">
+                <span class="logo-text">RCHN China Finance</span>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li>
+                        <a href="index.html#departments">Departments</a>
+                        <div class="dropdown">
+                            <a href="bp-reports.html" class="dropdown-item">Business Partnership (BP)</a>
+                            <a href="accounting-reports.html" class="dropdown-item">Accounting</a>
+                            <a href="fpa-reports.html" class="dropdown-item">Financial Planning</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="index.html#projects">Projects</a>
+                        <div class="dropdown">
+                            <a href="index.html#projects" class="dropdown-item">Province Persona Project</a>
+                        </div>
+                    </li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">Accounting Reports</h1>
+                <p class="page-description">Comprehensive accounting reports for financial accuracy and compliance</p>
+            </div>
+        </section>
+
+        <!-- Reports Section -->
+        <section class="reports-section">
+            <div class="container">
+                <!-- Report 1: 概况 -->
+                <div class="report-block">
+                    <div class="report-header">
+                        <h2 class="report-title">Financial Overview</h2>
+                        <p class="report-description">FY 2024 Financial Status Overview</p>
+                    </div>
+                    <div class="report-container">
+                        <iframe 
+                            title="RCHN FIN Overview Report" 
+                            width="100%" 
+                            height="600" 
+                            src="https://app.powerbi.com/reportEmbed?reportId=f99c4e32-d1b4-4eb4-b2e2-42144e58163c&appId=dddf9c1b-f07e-4033-9d75-3eecdf5aedcc&autoAuth=true&ctid=771c9c47-7f24-44dc-958e-34f8713a8394&pageName=概况&navContentPaneEnabled=false&filterPaneEnabled=false" 
+                            frameborder="0" 
+                            allowFullScreen="true">
+                        </iframe>
+                    </div>
+                </div>
+
+                <!-- Report 2: 员工费用 -->
+                <div class="report-block">
+                    <div class="report-header">
+                        <h2 class="report-title">Employee Expense Analysis</h2>
+                        <p class="report-description">FY 2024 Employee Expense Detailed Analysis</p>
+                    </div>
+                    <div class="report-container">
+                        <iframe 
+                            title="RCHN FIN Employee Expense Report" 
+                            width="100%" 
+                            height="600" 
+                            src="https://app.powerbi.com/reportEmbed?reportId=f99c4e32-d1b4-4eb4-b2e2-42144e58163c&appId=dddf9c1b-f07e-4033-9d75-3eecdf5aedcc&autoAuth=true&ctid=771c9c47-7f24-44dc-958e-34f8713a8394&pageName=员工费用&navContentPaneEnabled=false&filterPaneEnabled=false" 
+                            frameborder="0" 
+                            allowFullScreen="true">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Radiometer China Finance</h4>
+                    <p>Empowering financial excellence through data-driven insights and strategic partnership across all business operations.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Departments</h4>
+                    <ul>
+                        <li><a href="bp-reports.html">Business Partnership</a></li>
+                        <li><a href="fpa-reports.html">FP&A</a></li>
+                        <li><a href="accounting-reports.html">Accounting</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <div>
+                         <p><strong>IT Support:</strong><br>
+                         <a href="mailto:servicedesk@radiometer.com">servicedesk@radiometer.com</a></p>
+                         <p style="margin-top: 10px;"><strong>Finance Support:</strong><br>
+                         <a href="mailto:lareina.ni@radiometer.cn">lareina.ni@radiometer.cn</a></p>
+                     </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 RCHN Finance Department. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

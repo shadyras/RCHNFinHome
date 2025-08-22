@@ -1,0 +1,149 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header and footer styles moved to shared-components.css */
+
+/* Page Header */
+.page-header {
+    background: linear-gradient(135deg, #003750 0%, #5A9DB9 100%);
+    color: white;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.page-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.page-description {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Main Content */
+.main-content {
+    min-height: calc(100vh - 140px);
+}
+
+/* Reports Section */
+.reports-section {
+    padding: 60px 0;
+}
+
+.report-block {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    margin-bottom: 40px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.report-block:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.report-header {
+    padding: 30px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-bottom: 1px solid #dee2e6;
+}
+
+.report-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #003750;
+    margin-bottom: 8px;
+}
+
+.report-description {
+    color: #6c757d;
+    font-size: 1rem;
+}
+
+.report-container {
+    padding: 20px;
+    background: white;
+}
+
+.report-container iframe {
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    min-height: 600px;
+}
+
+/* Footer styles moved to shared-components.css */
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    /* Header responsive styles moved to shared-components.css */
+    
+    .page-title {
+        font-size: 2.2rem;
+    }
+    
+    .page-description {
+        font-size: 1rem;
+    }
+    
+    .report-header {
+        padding: 20px;
+    }
+    
+    .report-title {
+        font-size: 1.5rem;
+    }
+    
+    .report-container {
+        padding: 15px;
+    }
+    
+    .report-container iframe {
+        min-height: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .page-header {
+        padding: 40px 0;
+    }
+    
+    .page-title {
+        font-size: 1.8rem;
+    }
+    
+    .reports-section {
+        padding: 40px 0;
+    }
+    
+    .report-container iframe {
+        min-height: 350px;
+    }
+}
